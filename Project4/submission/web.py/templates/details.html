@@ -1,0 +1,59 @@
+{% extends "search.html" %}
+{% block content %}
+
+<h3> Details</h3>
+
+    
+	{% for key in items %}
+		<div>
+            <span>{{ key|e }}</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<span>{{ items[key]|e }}</span>
+			<!--link to be added for details probably here-->
+		</div>
+	{% endfor %}
+        <div>--------</div>
+        <span>Category</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {% for dict_item in category %}    
+    {% for key,value in dict_item.items()%}
+        <span>{{value}}</span> 
+        <span>,</span>
+    {% endfor %}
+    {% endfor %}
+        <div>--------</div>
+    {%set i = 1 %}
+    {% for dict_item in bids %}    
+    <span>Bids</span>
+    <span>{{i}}</span>
+    :&nbsp;&nbsp;
+
+        <span>UserID: </span>
+        <span> {{dict_item['UserID']}}</span>
+        &nbsp;&nbsp;
+        <span>Time: </span>
+        <span> {{dict_item['Time']}}</span>
+        &nbsp;&nbsp;
+        <span>Price: </span>
+        <span> {{dict_item['Amount']}}</span>
+        &nbsp;&nbsp;
+
+        <div>--------</div>
+
+    {%set i=i+1%}    
+    {% endfor %}
+    {% if status == 'Open'%}
+    <div >Status:&nbsp;&nbsp; <span class="alert alert-success">{{status}}</span> </div> 
+    {% else %}
+    <div >Status:&nbsp;&nbsp; <span class="alert alert-danger">{{status}}</span> </div>
+    {% endif %}
+    
+    
+    {% if result %}
+    {% for dict_item in result%}
+    <div>Winner:&nbsp;&nbsp; <span>Name: {{dict_item['UserID']}}; Price: {{dict_item['Amount']}}</span></div>
+    {% endfor %}
+    {% endif %}
+
+
+{% endblock %}
