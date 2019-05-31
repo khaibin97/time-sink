@@ -1,0 +1,14 @@
+
+.import items.dat Items 
+.import description.dat Descriptions
+update Descriptions set iDesc = null where iDesc = 'NULL';
+update Descriptions set Buy_Price = null where Buy_Price = 'NULL';
+.import category.dat Category
+.import bids.dat Bids
+update Bids set UserID = null where UserID = 'NULL';
+update Bids set BTime = null where BTime = 'NULL';
+update Bids set Amount = null where Amount = 'NULL';
+.import user.dat Users
+update Users set UserID = null where UserID = 'NULL';
+update Users set Loc = null where Loc = 'NULL';
+update Users set Country = null where Country = 'NULL';
