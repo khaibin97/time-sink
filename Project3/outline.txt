@@ -1,0 +1,10 @@
+Khai Bin Woon : woon2@wisc.edu
+Adam Adzmil : binmohammeda@wisc.edu
+
+We created 2 new test in the main.cpp
+1st test is to test if fetching all the data executes quickly and efficiently as the data are all next to each other
+2nd test is a sort of stress test where you fetch a random data 10,000 times and see how fast it finishes
+
+the test are located in main.cpp line 379 - 385 and the main.cpp file is included in the project3.zip
+
+the Design Document is named DesignDoc.pdf and is also included in project3.zip
